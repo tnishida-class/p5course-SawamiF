@@ -63,8 +63,8 @@ function setup(){
     text(scores[i].toPrecision(3), i * dx, height - h);
   }
 
-  fill(178, 255, 102)
-  line(0, average, 400, average)
+  stroke(178, 255, 102)
+  line(0, height * (100 - average) / 100, width, height * (100 - average) / 100)
 
   // BLANK[5] 平均点の線を引きます
 }
