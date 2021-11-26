@@ -28,6 +28,25 @@ function flower(x, y, r){
   ellipse(x + r * 2, y, r * 2, r / 2);//右の花びら
 }
 
+function mousePressed(){
+  grabbed = dist(mouseX, mouseY, x, y) < 30; // distは２点の距離を求める関数
+}
+
+function mouseDragged(){
+  if(grabbed){
+    x = mouseX;
+    y = mouseY;
+  }
+}
+
+function mouseReleased(){
+  if(grabbed){
+    grabbed = false;
+    vx = mouseX - pmouseX;
+    vy = mouseY - pmouseY;
+  }
+}
+
 
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
